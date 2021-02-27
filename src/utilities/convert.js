@@ -28,6 +28,14 @@ class Convert {
 
     return output;
   }
+
+  /**
+   * Convert the input string to an encoded URL
+   * @param {*} input
+   */
+  static toSafeUrl(input) {
+    return encodeURIComponent(input);
+  }
 }
 
 export default Convert;
