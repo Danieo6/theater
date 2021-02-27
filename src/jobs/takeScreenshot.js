@@ -6,6 +6,7 @@ class TakeScreenshot extends Job {
     await this.page.goto(this.url);
     Logger.info(`Taking screenshot on ${this.url}...`);
     await this.page.screenshot({ path: this.input.screenshotName });
+    return this.done();
   }
 }
 
