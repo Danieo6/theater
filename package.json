@@ -1,0 +1,30 @@
+{
+  "name": "puppet-master",
+  "version": "0.1.0",
+  "description": "Puppeteer boiler plate",
+  "main": "src/index.js",
+  "scripts": {
+    "babel-node": "babel-node",
+    "start": "nodemon --exec npm run babel-node -- src/index.js",
+    "dispatch": "nodemon --exec npm run babel-node -- src/index.js execute",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Budziński",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "puppeteer": "^7.1.0",
+    "puppeteer-cluster": "^0.22.0"
+  }
+}
