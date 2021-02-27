@@ -1,6 +1,7 @@
 import { Cluster } from 'puppeteer-cluster';
 import Convert from '../utilities/convert';
 import WorkerService from './service';
+import Listener from './listener';
 import Logger from '../utilities/logger';
 
 class Bootloader {
@@ -12,6 +13,11 @@ class Bootloader {
     try {
       // Launch worker service
       await WorkerService.launch(config);
+
+      // Launch listener service
+      if (Convert.toBool(process.env.ENABLE_LISTENER)) {
+        await Listener.launch();
+      }
     } catch (error) {
       Logger.error(error);
     }
