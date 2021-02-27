@@ -1,4 +1,5 @@
 import express from 'express';
+import { v4 as uuid } from 'uuid';
 import bodyParser from 'body-parser';
 import Convert from '../utilities/convert';
 import Logger from '../utilities/logger';
@@ -21,9 +22,10 @@ class Listener {
 
     this.server.post('/job', async (request, response) => {
       const task = request.body;
+      const id = uuid();
       Logger.info(`Received new task: ${task.name}`);
-      await WorkerService.addJob(task.name, task.data);
-      response.status(200).send({ msg: 'Task dispatched!' });
+      await WorkerService.addJob(task.name, id, task.data);
+      response.status(200).send({ taskId: id, msg: 'Task dispatched!' });
     });
 
     this.server.listen(port, () => {

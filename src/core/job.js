@@ -9,6 +9,20 @@ class Job {
   connectPage(page) {
     this.page = page;
   }
+
+  done(data) {
+    return {
+      status: 'done',
+      data,
+    };
+  }
+
+  error(msg) {
+    return {
+      status: 'failed',
+      msg,
+    };
+  }
 }
 
 export default Job;
