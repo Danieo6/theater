@@ -1,4 +1,3 @@
-import { response } from 'express';
 import { Cluster } from 'puppeteer-cluster';
 import Logger from '../utilities/logger';
 import Sender from './sender';
