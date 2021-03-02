@@ -4,7 +4,6 @@ import Logger from '../utilities/logger';
 class Sender {
   static async send(task) {
     const callback = process.env.CALLBACK_URL;
-    console.dir(callback);
     try {
       await axios.put(callback, {
         task: {
