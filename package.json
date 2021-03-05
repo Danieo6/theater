@@ -7,13 +7,17 @@
     "babel-node": "babel-node",
     "start": "nodemon --exec npm run babel-node -- src/index.js",
     "dispatch": "nodemon --exec npm run babel-node -- src/index.js execute",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:win": "del dist && npx babel src --out-dir dist",
+    "start:prod": "node dist/index.js"
   },
   "author": "Daniel Budziński",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.13.0",
     "@babel/core": "^7.12.16",
     "@babel/node": "^7.12.16",
+    "@babel/plugin-transform-runtime": "^7.13.9",
     "@babel/preset-env": "^7.12.16",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
