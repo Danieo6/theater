@@ -180,3 +180,7 @@ There are some feature I want to add to Theater.
 - [ ] Sender module - saving job data to database.
 - [ ] Integrate easy proxy configuration.
 - [ ] Create a "stealth" mode for web scraping.
+
+-----
+
+Copyright (c) 2021 Daniel Budziński
