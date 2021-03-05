@@ -14,7 +14,7 @@ class Listener {
     return Listener.instance;
   }
 
-  launch() {
+  async launch() {
     const port = Convert.toIntSafe(process.env.LISTENER_PORT);
 
     this.server = express();
