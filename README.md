@@ -15,7 +15,8 @@ Theater is a Puppeteer boiler-plate that allows you to quickly build functional 
 4. [Creating job scripts](#job-scripts)
 5. [Example scripts](#example-scripts)
 6. [Configuration](#configuration)
-7. [Roadmap](#roadmap)
+7. [Storage Module](#storage-module)
+8. [Roadmap](#roadmap)
 
 -----
 
@@ -172,11 +173,41 @@ This section will explain to you what all of the options do and how they should 
 | **LISTENER_PORT** | The port you want your listener to listen to. | _3000_ |
 | **CALLBACK_URL** | The URL you want your job data to be sent back | _http://localhost:5555_ |
 
+## Storage Module
+
+The storage module allows you to download images and save job data as local files.
+
+### Methods overview
+
+#### Storage.downloadImage(_url_, _path_)
+
+Downloads the provided image
+
+* url {string} - URL to the image you want to download
+* path {string} - where the image should be saved
+
+Returns the created file name.
+
+#### Storage.append(_file_, _data_, _newLine_)
+
+Appends data to the selected file
+
+* file {string} - Path to file
+* data {string} - Data to be appended
+* newLine {boolean} (Default: true) - Append from a new line?
+
+#### Storage.appendJson(_file_, _data_)
+
+Pushes a JSON objects to the array in the file. If it doesn't exists it creates.
+
+* file {string} - Path to file
+* data {object} - Data object to be appended
+
 ## Roadmap
 
 There are some feature I want to add to Theater.
 
-- [ ] Sender module - saving job data to local file system.
+- [x] Storage module - Allows you to save job data locally and download images.
 - [ ] Sender module - saving job data to database.
 - [ ] Integrate easy proxy configuration.
 - [ ] Create a "stealth" mode for web scraping.
