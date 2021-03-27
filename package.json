@@ -1,6 +1,6 @@
 {
   "name": "puppet-master",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Puppeteer boiler plate",
   "main": "src/index.js",
   "scripts": {
