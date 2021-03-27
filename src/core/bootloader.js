@@ -7,12 +7,10 @@ import Logger from '../utilities/logger';
 class Bootloader {
   async init() {
     Logger.info('Booting up...');
-    // Get configuration
-    const config = this.getConfiguration();
 
     try {
       // Launch worker service
-      await WorkerService.launch(config);
+      await WorkerService.launch(this.configuration);
 
       // Launch listener service
       if (Convert.toBool(process.env.ENABLE_LISTENER)) {
@@ -23,7 +21,7 @@ class Bootloader {
     }
   }
 
-  getConfiguration() {
+  get configuration() {
     const headless = Convert.toBool(process.env.HEADLESS);
     const maxConcurrency = Convert.toIntSafe(process.env.MAX_INSTANCES);
     // const timeout = Convert.toIntSafe(process.env.GLOBAL_TIMEOUT);
